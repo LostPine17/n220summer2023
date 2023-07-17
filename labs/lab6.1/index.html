@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JRPG Battle System</title>
+  <style>
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+    .stats {
+      margin-right: 20px;
+    }
+    .button {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="stats">
+      <h2>Player Stats</h2>
+      <p>Attack: <span id="player-attack"></span></p>
+      <p>HP: <span id="player-hp"></span></p>
+      <p>Defense: <span id="player-defense"></span></p>
+    </div>
+    <div class="stats">
+      <h2>Enemy Stats</h2>
+      <p>Attack: <span id="enemy-attack"></span></p>
+      <p>HP: <span id="enemy-hp"></span></p>
+      <p>Defense: <span id="enemy-defense"></span></p>
+    </div>
+    <button class="button" onclick="attackEnemy()">Attack Enemy</button>
+  </div>
+
+  <script>
+    // Player object
+    var player = {
+      attack: 10,
+      hp: 100,
+      defense: 5
+    };
+
+    // Enemy object
+    var enemy = {
+      attack: 8,
+      hp: 80,
+      defense: 3
+    };
+
+    // Function to update the displayed stats
+    function updateStats() {
+      document.getElementById("player-attack").textContent = player.attack;
+      document.getElementById("player-hp").textContent = player.hp;
+      document.getElementById("player-defense").textContent = player.defense;
+      document.getElementById("enemy-attack").textContent = enemy.attack;
+      document.getElementById("enemy-hp").textContent = enemy.hp;
+      document.getElementById("enemy-defense").textContent = enemy.defense;
+    }
+
+    // Function to handle the player attacking the enemy
+    function attackEnemy() {
+      var damageDealt = player.attack - enemy.defense;
+      enemy.hp -= damageDealt;
+
+      // Enemy attacks back
+      var damageReceived = enemy.attack - player.defense;
+      player.hp -= damageReceived;
+
+      updateStats();
+    }
+
+    // Initial stats update
+    updateStats();
+  </script>
+</body>
+</html>
