@@ -13,7 +13,7 @@ function draw() {
   background(220);
   
   // Update object properties
-  circleObject.size += 1; // Increment size by 0.5
+  circleObject.size += 1; // Increment size by 1
   
   // Draw the circle using object properties
   ellipse(circleObject.x, circleObject.y, circleObject.size, circleObject.size);
