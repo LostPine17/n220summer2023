@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Greeter</title>
+</head>
+<body>
+    <!-- Input field for the user to enter their name -->
+    <label for="nameInput">Enter your name:</label>
+    <input type="text" id="nameInput" placeholder="Your Name">
+
+    <!-- Button to trigger the displayGreeting() function when clicked -->
+    <button onclick="displayGreeting()">Submit</button>
+
+    <script>
+        // Function to display the greeting when the button is clicked
+        function displayGreeting() {
+            // Get the value entered by the user in the input field
+            const name = document.getElementById("nameInput").value;
+
+            // Output the greeting to the developer console
+            console.log("Hello " + name);
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Distance Calculator</title>
+</head>
+<body>
+    <!-- Input fields for x1, y1, x2, and y2 -->
+    <label for="x1">x1:</label>
+    <input type="number" id="x1" placeholder="X1">
+
+    <label for="y1">y1:</label>
+    <input type="number" id="y1" placeholder="Y1">
+
+    <label for="x2">x2:</label>
+    <input type="number" id="x2" placeholder="X2">
+
+    <label for="y2">y2:</label>
+    <input type="number" id="y2" placeholder="Y2">
+
+    <!-- Button to trigger the calculateDistance() function when clicked -->
+    <button onclick="calculateDistance()">Calculate Distance</button>
+
+    <script>
+        // Function to calculate the distance between two points
+        function calculateDistance() {
+            // Get the values entered by the user for x1, y1, x2, and y2
+            const x1 = parseFloat(document.getElementById("x1").value);
+            const y1 = parseFloat(document.getElementById("y1").value);
+            const x2 = parseFloat(document.getElementById("x2").value);
+            const y2 = parseFloat(document.getElementById("y2").value);
+
+            // Check if any input is non-numeric
+            if (isNaN(x1) || isNaN(y1) || isNaN(x2) || isNaN(y2)) {
+                console.error("Please enter valid numerical values for all inputs.");
+                return;
+            }
+
+            // Calculate the differences between the x and y points
+            const xDiff = x2 - x1;
+            const yDiff = y2 - y1;
+
+            // Calculate the distance using the distance formula
+            const distance = Math.sqrt(xDiff * xDiff + yDiff * yDiff);
+
+            // Output the distance to the console
+            console.log("Distance: " + distance.toFixed(2));
+        }
+    </script>
+</body>
+</html>
+

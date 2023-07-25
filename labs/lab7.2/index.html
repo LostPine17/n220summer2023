@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tip Calculator</title>
+</head>
+<body>
+    <label for="billAmount">Enter the bill amount:</label>
+    <input type="number" id="billAmount" placeholder="Bill Amount">
+    <button onclick="calculateTip()">Calculate Tip</button>
+
+    <script>
+        function calculateTip() {
+            const billAmount = parseFloat(document.getElementById("billAmount").value);
+
+            // Check if the input is numerical
+            if (isNaN(billAmount)) {
+                console.error("Please enter a valid numerical value.");
+                return;
+            }
+
+            // Calculate the tip and total amount
+            const tipPercentage = 0.15; // Assuming 15% tip, you can change this as per your requirement
+            const tipAmount = billAmount * tipPercentage;
+            const totalAmount = billAmount + tipAmount;
+
+            // Output the tip and total amount to the console
+            console.log("Tip: $" + tipAmount.toFixed(2) + ". Total: $" + totalAmount.toFixed(2));
+        }
+    </script>
+</body>
+</html>
