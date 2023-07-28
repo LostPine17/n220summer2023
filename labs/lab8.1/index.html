@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Divisible By 7</title>
+</head>
+<body>
+    <h1>Divisible by 7 Checker</h1>
+    <label for="numberInput">Enter a number:</label>
+    <input type="number" id="numberInput">
+    <button onclick="checkDivisibility()">Check Divisibility</button>
+    <div id="result"></div>
+
+    <script>
+        // Function to check if a given number is divisible by 7
+        function isDivisibleBy7(number) {
+            return number % 7 === 0;
+        }
+
+        // Function that is called when the button is clicked
+        function checkDivisibility() {
+
+            // Get the input element and its value
+            const inputElement = document.getElementById("numberInput");
+            const number = parseInt(inputElement.value, 10);
+
+            // Check if the input value is a valid number
+            if (!isNaN(number)) {
+                // Get the result div element
+                const resultDiv = document.getElementById("result");
+                // Call the isDivisibleBy7 function to check the divisibility
+                const isDivisible = isDivisibleBy7(number);
+
+                // Display the result in the result div
+                resultDiv.innerText = isDivisible
+                    ? `${number} is divisible by 7.`
+                    : `${number} is not divisible by 7.`;
+            } else {
+                // If the input is not a valid number, show an alert
+                alert("Please enter a valid number.");
+            }
+        }
+    </script>
+</body>
+</html>
