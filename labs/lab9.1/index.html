@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>It's Just Average</title>
+</head>
+<body>
+  <h1>It's Just Average</h1>
+  <label for="numbersInput">Enter comma-separated numbers:</label>
+  <input type="text" id="numbersInput" />
+  <button onclick="calculate()">Calculate</button>
+  <p>Sum: <span id="sumResult"></span></p>
+  <p>Average: <span id="averageResult"></span></p>
+
+  <script>
+    function calculate() {
+      // Get the input value and split it into an array of numbers
+      const numbersInput = document.getElementById("numbersInput").value;
+      const numbersArray = numbersInput.split(",");
+
+      // Convert string numbers to numeric values
+      const numericArray = numbersArray.map(Number);
+
+      // Calculate the sum
+      const sum = numericArray.reduce((acc, curr) => acc + curr, 0);
+
+      // Calculate the average
+      const average = sum / numericArray.length;
+
+      // Display the results
+      document.getElementById("sumResult").innerText = sum;
+      document.getElementById("averageResult").innerText = average;
+
+      // Clear the input
+      document.getElementById("numbersInput").value = "";
+    }
+  </script>
+</body>
+</html>
