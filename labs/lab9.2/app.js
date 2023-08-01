@@ -1,5 +1,5 @@
 // Define a list of bad words that you want to check for
-const badWordsList = ['clear', 'water', 'tires']; // Add your list of bad words here
+const badWordsList = ['clear', 'water', 'tires'];
 
 // Function to check for bad words in the input text
 function checkForBadWords() {
