@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Color Mixer</title>
+  <style>
+    #colorDiv {
+      width: 200px;
+      height: 200px;
+      background-color: black;
+      margin: 10px;
+    }
+
+    #currentColorDiv {
+      width: 200px;
+      height: 30px;
+      margin: 10px;
+      text-align: center;
+      font-size: 18px;
+    }
+
+    button {
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div id="colorDiv"></div>
+  <div id="currentColorDiv">RGB Color: 0, 0, 0</div>
+  <button data-color="red" data-value="1">+1 Red</button>
+  <button data-color="red" data-value="5">+5 Red</button>
+  <button data-color="red" data-value="10">+10 Red</button>
+  <button data-color="green" data-value="1">+1 Green</button>
+  <button data-color="green" data-value="5">+5 Green</button>
+  <button data-color="green" data-value="10">+10 Green</button>
+  <button data-color="blue" data-value="1">+1 Blue</button>
+  <button data-color="blue" data-value="5">+5 Blue</button>
+  <button data-color="blue" data-value="10">+10 Blue</button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
+
