@@ -60,6 +60,7 @@ function draw() {
     checkCollisions();
     drawPaddle();
     drawBricks();
+    displayScore(); // Displays the score counter
   }
 
   // Resets bricks if they are all gone
@@ -73,9 +74,7 @@ function draw() {
   if (gameState === "gameOver") {
     displayMessage("GAME OVER");
     displaySubMessage("Press Space to Try Again");
-  }
-
-  displayScore(); // Displays the score counter 
+  } 
 }
 
 // Function to display the title
@@ -132,7 +131,7 @@ function movePaddle() {
 
 // Function to move the ball and handle collisions with walls
 function moveBall() {
-  // Only move the ball if the game is not over
+  // Only move the ball if the game is not over 
   if (gameState !== "gameOver") {
     ballX += ballSpeedX;
     ballY += ballSpeedY;
